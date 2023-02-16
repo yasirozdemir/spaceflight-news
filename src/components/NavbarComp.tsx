@@ -18,8 +18,8 @@ const NavbarComp = () => {
             className="d-flex align-items-center"
             style={{ color: "white" }}
           >
-            <h1 className="m-0 mr-2"> SPACEFLIGHT NEWS </h1>
-            <h3 className="m-0">(fly to stay alive)</h3>
+            <h2 className="m-0 mr-2"> SPACEFLIGHT NEWS </h2>
+            <h3 className="m-0 d-none d-sm-block">(fly to stay alive)</h3>
           </Link>
         </Row>
       </Container>
