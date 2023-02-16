@@ -28,8 +28,7 @@ const ArticleList = () => {
 
   return (
     <>
-      <h1>Article List</h1>
-      <Container>
+      <Container style={{ marginTop: "80px" }}>
         <Row className="justify-content-center">
           {articles &&
             articles.map((a) => (

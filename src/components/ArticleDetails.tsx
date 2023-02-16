@@ -31,7 +31,7 @@ const ArticleDetails = () => {
 
   return (
     <>
-      <Container fluid id="articleDetails">
+      <Container fluid id="articleDetails" style={{ minHeight: "100vh" }}>
         {articleDetails && (
           <>
             <Row style={{ backgroundImage: `url(${articleDetails.imageUrl})` }}>
