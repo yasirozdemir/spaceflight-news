@@ -13,6 +13,8 @@ const ArticleList = () => {
       if (response.ok) {
         const articleData = await response.json();
         setArticles(articleData);
+      } else {
+        console.log("error");
       }
     } catch (error) {
       console.error(error);
@@ -24,16 +26,14 @@ const ArticleList = () => {
     // eslint-disable-next-line
   }, []);
 
-  console.log(articles);
-
   return (
     <>
       <h1>Article List</h1>
       <Container>
-        <Row>
+        <Row className="justify-content-center">
           {articles &&
             articles.map((a) => (
-              <Col xs={12} md={4} sm={3} key={a.id}>
+              <Col xs={12} sm={6} md={4} key={a.id}>
                 <Article article={a}></Article>
               </Col>
             ))}

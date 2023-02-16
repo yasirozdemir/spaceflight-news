@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import url from "../utils/index";
 import { IArticle } from "../interfaces/IArticle";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { format, parseISO } from "date-fns";
 
 const ArticleDetails = () => {
   const articleID = useParams().articleID;
@@ -32,14 +34,26 @@ const ArticleDetails = () => {
       <Container fluid id="articleDetails">
         {articleDetails && (
           <>
-            <Row>
-              <Col>
-                <img src={articleDetails.imageUrl} alt={articleDetails.title} />
-              </Col>
-            </Row>
-            <Row>
-              <Col>
+            <Row style={{ backgroundImage: `url(${articleDetails.imageUrl})` }}>
+              <div>
                 <h1>{articleDetails.title}</h1>
+              </div>
+            </Row>
+            <Row className="justify-content-center pt-3">
+              <Col xs={6}>
+                <h4>{articleDetails.summary}</h4>
+
+                <h6>
+                  {"Published at "}
+                  {format(
+                    parseISO(articleDetails.publishedAt),
+                    "MMM  do, yyyy"
+                  )}
+                  {" by "}
+                  <Link to={articleDetails.url} target="_blank">
+                    {articleDetails.newsSite}
+                  </Link>
+                </h6>
               </Col>
             </Row>
           </>
