@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { IArticle } from "../interfaces/IArticle";
 import Article from "./Article";
+import url from "../utils/index";
 
 const ArticleList = () => {
-  const url = "https://api.spaceflightnewsapi.net/v3/articles";
   const [articles, setArticles] = useState<IArticle[]>([]);
 
   const fetchArticles = async () => {
